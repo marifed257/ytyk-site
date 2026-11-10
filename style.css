@@ -1,0 +1,371 @@
+/* Подключаем современный красивый шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fffaf0;
+    color: #29251f;
+    line-height: 1.6;
+}
+
+/* ===== ШАПКА ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background: #ffffff;
+    border-bottom: 1px solid #eee4d5;
+    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: #d89b1e; /* Золотистый цвет под лого */
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo span {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 8px 0 0 0;
+}
+
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    white-space: nowrap;
+}
+
+header nav a {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #29251f;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #e58b3b;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: #e58b3b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #d87526;
+    transform: translateY(-2px);
+}
+
+.profile-btn {
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background: #f0dfc7;
+    color: #563c28;
+}
+
+.profile-btn:hover {
+    background: #e0c9a8;
+}
+
+main {
+    min-height: 80vh;
+    padding: 40px 7%;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f5ead8;
+    color: #776b5c;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+/* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
+.hero {
+    background: linear-gradient(135deg, #f4dfbd 0%, #fce6cd 100%);
+    padding: 80px 60px;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.hero > p:first-child {
+    margin-bottom: 15px;
+    color: #967a58;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    color: #4a2c16;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero > p {
+    font-size: 18px;
+    color: #6b5a47;
+    margin-bottom: 30px;
+}
+
+/* ===== КАТЕГОРИИ ===== */
+main h2 {
+    margin: 40px 0 25px;
+    font-size: 28px;
+    color: #4a2c16;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.categories button {
+    background: #ffffff;
+    color: #563c28;
+    border: 1px solid #eaddc7;
+    padding: 10px 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 10px #00000005;
+}
+
+.categories button:hover {
+    background: #f0dfc7;
+    transform: none;
+}
+
+/* ===== КАРТОЧКИ БЛЮД ===== */
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.dish-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 20px #00000008;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px #00000015;
+}
+
+.dish-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dish-card:hover img {
+    transform: scale(1.05);
+}
+
+.dish-info {
+    padding: 20px;
+    background: white;
+    flex-grow: 1;
+}
+
+.dish-info h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #29251f;
+}
+
+.dish-info p {
+    color: #827567;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* ===== СТРАНИЦА РЕЦЕПТА ===== */
+button[onclick="showHome()"] {
+    background: #f0dfc7;
+    color: #563c28;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+button[onclick="showHome()"]:hover {
+    background: #e0c9a8;
+}
+
+#app h1 {
+    font-size: 40px;
+    color: #4a2c16;
+    margin-bottom: 5px;
+}
+
+#app h1 + p {
+    font-size: 18px;
+    color: #827567;
+    margin-bottom: 20px;
+}
+
+.recipe-image {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin: 20px 0 30px;
+    box-shadow: 0 10px 30px #00000010;
+}
+
+#app p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#app h2 {
+    margin: 35px 0 15px;
+    font-size: 24px;
+    color: #4a2c16;
+    border-bottom: 2px solid #f0dfc7;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#app ul, #app ol {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+#app li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+#app li::marker {
+    color: #e58b3b;
+    font-weight: bold;
+}
+
+/* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНОВ ===== */
+@media (max-width: 900px) {
+    header nav {
+        display: none; /* Скрываем меню на телефоне, чтобы не ломалось */
+    }
+    
+    .hero h1 {
+        font-size: 42px;
+    }
+    
+    .hero {
+        padding: 50px 30px;
+    }
+    
+    .recipe-image {
+        height: 300px;
+    }
+}
+/* ===== ПРЕМИАЛЬНЫЕ ДЕТАЛИ ДЛЯ ЗАЩИТЫ ===== */
+
+/* 1. Эффект стекла для шапки (чтобы было видно контент при прокрутке) */
+header {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(238, 228, 213, 0.5);
+}
+
+/* 2. Красивое золотистое свечение для кнопок при наведении */
+.categories button:hover {
+    background: #fffaf0;
+    border-color: #d89b1e;
+    color: #d89b1e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(216, 155, 30, 0.15);
+}
+
+/* 3. Плавный скролл для всего сайта */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 4. Красивое выделение текста (если выделить мышкой) */
+::selection {
+    background: #d89b1e;
+    color: white;
+}
+
+/* 5. Красивое появление страниц (плавное затухание) */
+#app {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 6. Стильные скроллбары (если открыть на большом экране) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #fffaf0;
+}
+::-webkit-scrollbar-thumb {
+    background: #e0c9a8;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #d89b1e;
+}

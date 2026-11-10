@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ытык — Якутские рецепты</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+<div class="logo" onclick="showHome()">
+    <img src="images/logo.png" alt="Логотип Ытык">
+    <span>Ытык</span>
+</div>
+        
+<nav>
+   <a href="#" onclick="showCategoriesPage(); return false;">Категории рецептов</a>
+
+
+<a href="#" onclick="showAbout(); return false;">О нас</a>
+<a href="#" onclick="showContacts(); return false;">Контакты</a>
+</nav>
+
+        <button class="profile-btn" onclick="showProfile()">♙</button>
+    </header>
+
+    <main id="app"></main>
+    <div style="text-align: center; margin-top: 60px; padding: 20px 0; opacity: 0.8;">
+        <svg width="100%" height="40" viewBox="0 0 1200 40" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="yakut-pattern" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
+                    <!-- Якутский ромб -->
+                    <polygon points="40,2 68,20 40,38 12,20" fill="none" stroke="#d89b1e" stroke-width="2"/>
+                    <!-- Внутренний крест -->
+                    <line x1="40" y1="10" x2="40" y2="30" stroke="#d89b1e" stroke-width="2"/>
+                    <line x1="22" y1="20" x2="58" y2="20" stroke="#d89b1e" stroke-width="2"/>
+                    <!-- Точки по бокам (символ рогов) -->
+                    <circle cx="5" cy="20" r="2" fill="#d89b1e"/>
+                    <circle cx="75" cy="20" r="2" fill="#d89b1e"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#yakut-pattern)"/>
+        </svg>
+    </div>
+
+    <footer>
+        <p>ЫТЫК © 2026 · Вкус традиций Якутии</p>
+    </footer>
+    <footer>
+        <p>ЫТЫК © 2026 · Вкус традиций Якутии</p>
+    </footer>
+
+</body>
+</html>
